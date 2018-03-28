@@ -1,0 +1,29 @@
+{
+  "name": "lootsafe.python.api",
+  "version": "1.0.0",
+  "description": "LootSafe API endpoints wrapper in Python.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LootSafe/LootSafe.Python.API.git"
+  },
+  "keywords": [
+    "api",
+    "wrapper",
+    "python",
+    "endpoint",
+    "endpoints"
+  ],
+  "author": "SoftDevAndy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LootSafe/LootSafe.Python.API/issues"
+  },
+  "homepage": "https://github.com/LootSafe/LootSafe.Python.API#readme",
+  "dependencies": {
+    "requests": "^0.2.2"
+  }
+}
