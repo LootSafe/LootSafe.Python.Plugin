@@ -1,6 +1,6 @@
 # Import the library
 
-from LootSafeWrapper import LootSafe
+from lootsafe import LootSafe
 
 # Required Configurable Variables
 
@@ -15,4 +15,4 @@ lootsafe = LootSafe(apiUrl, apiKey)
 
 print()
 print("=== Example ===\n")
-print(lootsafe.crafter_getCraftables_GET())
+print(lootsafe.crafter.getCraftables_GET())
