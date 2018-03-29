@@ -8,7 +8,7 @@ Currently working on Python 3.6.4 running on Windows 10.
 ### Usage
 
 ```
-python Example.py
+python example.py
 ```
 
 ```
