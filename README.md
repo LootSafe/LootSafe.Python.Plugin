@@ -41,71 +41,41 @@ Output
 
 ## Endpoints
 
-### Balance
-
-**Open**
-
-* balance_balanceOf_GET(address)
-* balance_itemBalances_GET(address)
-* balance_itemBalance_GET(itemAddress, address)
-
-### Crafter
-
-**Open**
-
-* crafter_getCraftables_GET()
-* crafter_getDeconstructables_GET()
-* crafter_getDeconstructionRecipe_GET(item)
-* crafter_getRecipe_GET(item)
-
-**Authenticated**
-
-* crafter_newRecipe_POST(apiKey, otp, result, materials, counts)
-* crafter_removeRecipe_POST(apiKey, otp, item)
-* **~~newDeconstructionRecipe_POST(apiKey, otp)~~**
-
-### Events
-
-**Open**
-
-* events_fetchEvents_GET()
-
-### Globals
-
-**Open**
-
-* globals_getMeta_GET()
-* globals_getTokenAddress_GET()
-
-**Authenticated**
-
-* globals_newItem_POST(apiKey, otp, name, id, totalSupply, metadata)
-* **~~spawnItem_POST(apiKey, otp)~~**
-* **~~clearAvailability_POST(apiKey, otp)~~**
-
-### Items
-
-**Open**
-
-* items_getItems_GET()
-* items_getItemAddresses_GET()
-* items_ledger_GET()
-* items_getItem_GET(item)
-* items_getItemByAddress_GET(item)
-
-### LootBox
-
-**Open**
-
-* lootbox_getChances_GET()
-* lootbox_getCost_GET()
-* lootbox_getItems_GET(rarity)
-
-**Authenticated**
-
-* lootbox_addItem_POST(apikey, opt, item, rarity)
-* lootbox_updateChance_GET(apikey, opt, epic,  rare, uncommon)
-* lootbox_updateLootBoxCost_GET(apikey, opt, cost)
+ Endpoint  | Type | Auth | Status |
+|---|---|---|---|
+| **Balance**   |   |   |   |
+| balance_balanceOf_GET(address)  | **GET**  | OPEN  | - [x] Available |
+| balance_itemBalances_GET(address)  | **GET**  | OPEN  | - [x] Available |
+| balance_itemBalance_GET(itemAddress, address)  | **GET**  | OPEN   | - [x] Available |
+| **Crafter**   |   |   |   |
+| crafter_getCraftables_GET()  | **GET**  | OPEN   | - [x] Available |
+| crafter_getDeconstructables_GET()  | **GET**  | OPEN   | - [x] Available |
+| crafter_getDeconstructionRecipe_GET(item)  | **GET**  | OPEN   | - [x] Available |
+| crafter_getRecipe_GET(item) | **GET**  | OPEN   | - [x] Available |
+| crafter_newRecipe_POST(apiKey, otp, result, materials, counts)  | **POST**  | AUTH   | - [x] Available |
+| crafter_removeRecipe_POST(apiKey, otp, item)  | **POST**  | AUTH   | - [x] Available |
+| ~~newDeconstructionRecipe_POST(apiKey, otp)~~ | **POST**  | AUTH   | - [ ] Available |
+| **Events**  |   |   |   |
+| events_fetchEvents_GET()  | **GET**  | OPEN   | - [x] Available |
+| **Globals**  |   |   |   |
+| globals_getMeta_GET()  | **GET**  | OPEN   | - [x] Available |
+| globals_getTokenAddress_GET()  | **GET**  | OPEN   | - [x] Available |
+| globals_newItem_POST(apiKey, otp, name, id, totalSupply, metadata) | **POST**  | AUTH   | - [x] Available |
+| ~~spawnItem_POST(apiKey, otp)~~  | **POST**   | AUTH   | - [ ] Available |
+| ~~clearAvailability_POST(apiKey, otp)~~  | **POST**   | AUTH   | - [ ] Available |
+| **Items**  |   |   |   |
+| items_getItems_GET()  | **GET**  | OPEN   | - [x] Available |
+| items_getItemAddresses_GET()  | **GET**  | OPEN   | - [x] Available |
+| items_ledger_GET()  | **GET**  | OPEN   | - [x] Available |
+| items_getItem_GET(item)  | **GET**  | OPEN   | - [x] Available |
+| items_getItemByAddress_GET(item) | **GET**  | OPEN   | - [x] Available |
+| **LootBox** |   |   |   |
+| lootbox_getChances_GET()  | **GET**  | OPEN   | - [x] Available |
+| lootbox_getCost_GET()  | **GET**  | OPEN   | - [x] Available |
+| lootbox_getItems_GET(rarity)  | **GET**  | OPEN   | - [x] Available |
+| lootbox_addItem_POST(apikey, opt, item, rarity)  | **POST**  | AUTH  | - [x] Available |
+| lootbox_updateChance_GET(apikey, opt, epic,  rare, uncommon) | **GET**  | AUTH  | - [x] Available |
+| lootbox_updateLootBoxCost_GET(apikey, opt, cost)  | **GET**  | AUTH  | - [x] Available |
 
 ## Issues & Future Development
 
