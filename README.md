@@ -29,7 +29,7 @@ lootsafe = LootSafe(apiUrl, apiKey)
 
 print()
 print("=== Example ===\n")
-print(lootsafe.crafter_getCraftables_GET())
+print(lootsafe.crafter_getCraftables())
 ```
 
 Output
@@ -44,41 +44,41 @@ Output
  Endpoint  | Type | Auth | Status |
 |---|---|---|---|
 | **Balance**   |   |   |   |
-| balance.balanceOf_GET(address)  | **GET**  | OPEN  | Available |
-| balance.itemBalances_GET(address)  | **GET**  | OPEN  | Available |
-| balance.itemBalance_GET(itemAddress, address)  | **GET**  | OPEN   | Available |
+| balance.balanceOf(address)  | **GET**  | OPEN  | Available |
+| balance.itemBalances(address)  | **GET**  | OPEN  | Available |
+| balance.itemBalance(itemAddress, address)  | **GET**  | OPEN   | Available |
 | **Crafter**   |   |   |   |
-| crafter.getCraftables_GET()  | **GET**  | OPEN   | Available |
-| crafter.getDeconstructables_GET()  | **GET**  | OPEN   | Available |
-| crafter.getDeconstructionRecipe_GET(item)  | **GET**  | OPEN   | Available |
-| crafter.getRecipe_GET(item) | **GET**  | OPEN   | Available |
-| crafter.newRecipe_POST(apiKey, otp, result, materials, counts)  | **POST**  | AUTH   | Available |
-| crafter.removeRecipe_POST(apiKey, otp, item)  | **POST**  | AUTH   | Available |
-| ~~newDeconstructionRecipe_POST(apiKey, otp)~~ | **POST**  | AUTH   | Unavailable |
+| crafter.getCraftables()  | **GET**  | OPEN   | Available |
+| crafter.getDeconstructables()  | **GET**  | OPEN   | Available |
+| crafter.getDeconstructionRecipe(item)  | **GET**  | OPEN   | Available |
+| crafter.getRecipe(item) | **GET**  | OPEN   | Available |
+| crafter.newRecipe(apiKey, otp, result, materials, counts)  | **POST**  | AUTH   | Available |
+| crafter.removeRecipe(apiKey, otp, item)  | **POST**  | AUTH   | Available |
+| ~~newDeconstructionRecipe(apiKey, otp)~~ | **POST**  | AUTH   | Unavailable |
 | **Events**  |   |   |   |
-| events.fetchEvents_GET()  | **GET**  | OPEN   | Available |
+| events.fetchEvents()  | **GET**  | OPEN   | Available |
 | **Globals**  |   |   |   |
-| globe.getMeta_GET()  | **GET**  | OPEN   | Available |
-| globe.getTokenAddress_GET()  | **GET**  | OPEN   | Available |
-| globe.newItem_POST(apiKey, otp, name, id, totalSupply, metadata) | **POST**  | AUTH   | Available |
-| ~~spawnItem_POST(apiKey, otp)~~  | **POST**   | AUTH   | Unavailable |
-| ~~clearAvailability_POST(apiKey, otp)~~  | **POST**   | AUTH   | Unavailable |
+| globe.getMeta()  | **GET**  | OPEN   | Available |
+| globe.getTokenAddress()  | **GET**  | OPEN   | Available |
+| globe.newItem(apiKey, otp, name, id, totalSupply, metadata) | **POST**  | AUTH   | Available |
+| ~~spawnItem(apiKey, otp)~~  | **POST**   | AUTH   | Unavailable |
+| ~~clearAvailability(apiKey, otp)~~  | **POST**   | AUTH   | Unavailable |
 | **Items**  |   |   |   |
-| items.getItems_GET()  | **GET**  | OPEN   | Available |
-| items.getItemAddresses_GET()  | **GET**  | OPEN   | Available |
-| items.ledger_GET()  | **GET**  | OPEN   | Available |
-| items.getItem_GET(item)  | **GET**  | OPEN   | Available |
-| items.getItemByAddress_GET(item) | **GET**  | OPEN   | Available |
+| items.getItems()  | **GET**  | OPEN   | Available |
+| items.getItemAddresses()  | **GET**  | OPEN   | Available |
+| items.ledger()  | **GET**  | OPEN   | Available |
+| items.getItem(item)  | **GET**  | OPEN   | Available |
+| items.getItemByAddress(item) | **GET**  | OPEN   | Available |
 | **LootBox** |   |   |   |
-| lootbox.getChances_GET()  | **GET**  | OPEN   | Available |
-| lootbox.getCost_GET()  | **GET**  | OPEN   | Available |
-| lootbox.getItems_GET(rarity)  | **GET**  | OPEN   | Available |
-| lootbox.addItem_POST(apikey, opt, item, rarity)  | **POST**  | AUTH  | Available |
-| lootbox.updateChance_GET(apikey, opt, epic,  rare, uncommon) | **GET**  | AUTH  | Available |
-| lootbox.updateLootBoxCost_GET(apikey, opt, cost)  | **GET**  | AUTH  | Available |
+| lootbox.getChances()  | **GET**  | OPEN   | Available |
+| lootbox.getCost()  | **GET**  | OPEN   | Available |
+| lootbox.getItems(rarity)  | **GET**  | OPEN   | Available |
+| lootbox.addItem(apikey, opt, item, rarity)  | **POST**  | AUTH  | Available |
+| lootbox.updateChance(apikey, opt, epic,  rare, uncommon) | **GET**  | AUTH  | Available |
+| lootbox.updateLootBoxCost(apikey, opt, cost)  | **GET**  | AUTH  | Available |
 
 ## Issues & Future Development
 
-* **[Server Issue]** crafter.newDeconstructionRecipe_POST
-* **[Server Issue]** global.spawnItem_POST
-* **[Server Issue]** global.clearAvailability_POST
+* **[Server Issue]** crafter.newDeconstructionRecipe
+* **[Server Issue]** global.spawnItem
+* **[Server Issue]** global.clearAvailability

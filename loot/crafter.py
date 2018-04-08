@@ -23,7 +23,7 @@ class Crafter(object):
 
 	# Crafter
 
-	def	getCraftables_GET(self):		
+	def	getCraftables(self):		
 		url = self.apiUrl + self.__url_getCraftables
 		response = requests.get(url)
 		if response.status_code == 200:
@@ -31,7 +31,7 @@ class Crafter(object):
 		else:
 			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
 
-	def getDeconstructables_GET(self):
+	def getDeconstructables(self):
 		url = self.apiUrl + self.__url_getDeconstructables
 		response = requests.get(url)
 		if response.status_code == 200:
@@ -40,7 +40,7 @@ class Crafter(object):
 			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
 
 
-	def getDeconstructionRecipe_GET(self, item):
+	def getDeconstructionRecipe(self, item):
 		url = self.apiUrl + self.__url_getDeconstructablesRecipe + item
 		response = requests.get(url)
 		if response.status_code == 200:
@@ -49,7 +49,7 @@ class Crafter(object):
 			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
 
 
-	def getRecipe_GET(self, item):
+	def getRecipe(self, item):
 		url = self.apiUrl + self.__url_getRecipe + item
 		response = requests.get(url)
 		if response.status_code == 200:
@@ -58,7 +58,7 @@ class Crafter(object):
 			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
 
 
-	def newRecipe_POST(self, apiKey, otp, result, materials, counts):
+	def newRecipe(self, apiKey, otp, result, materials, counts):
 		url = self.apiUrl + self.__url_newRecipe
 		headers = {'key' : apiKey, 'otp' : otp}
 		postData = {'result': result, 'materials': materials, 'counts': counts}
@@ -69,7 +69,7 @@ class Crafter(object):
 			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
 
 
-	def removeRecipe_POST(self, apiKey, otp, item):		
+	def removeRecipe(self, apiKey, otp, item):		
 		url = self.apiUrl + self.__url_removeRecipe
 		headers = {'key' : apiKey, 'otp' : otp}
 		postData = {'item' : item}
@@ -80,4 +80,4 @@ class Crafter(object):
 			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
 
 
-	#def newDeconstructionRecipe_POST(self, apiKey, otp):			
+	#def newDeconstructionRecipe(self, apiKey, otp):			

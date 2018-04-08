@@ -21,7 +21,7 @@ class Globals(object):
 
 	# Globals
 
-	def getMeta_GET(self):		
+	def getMeta(self):		
 		url = self.apiUrl + self.__url_meta
 		response = requests.get(url)
 		if response.status_code == 200:
@@ -29,7 +29,7 @@ class Globals(object):
 		else:
 			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
 
-	def getTokenAddress_GET(self):		
+	def getTokenAddress(self):		
 		url = self.apiUrl + self.__url_getTokenAddress
 		response = requests.get(url)
 		if response.status_code == 200:
@@ -38,7 +38,7 @@ class Globals(object):
 			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
 
 
-	def newItem_POST(self, apiKey, otp, name, id, totalSupply, metadata):
+	def newItem(self, apiKey, otp, name, id, totalSupply, metadata):
 		url = self.apiUrl + self.__url_newItem
 		headers = {'key' : apiKey, 'otp' : otp}
 		postData = {'name' : name, 'id' : id, 'totalSupply' : totalSupply, 'metadata' : metadata}
@@ -49,5 +49,5 @@ class Globals(object):
 			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
 
 
-	#spawnItem_POST(string apiKey, string otp)
-	#clearAvailability_POST(string apiKey, string otp)
+	#spawnItem(string apiKey, string otp)
+	#clearAvailability(string apiKey, string otp)

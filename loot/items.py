@@ -21,7 +21,7 @@ class Items(object):
 
 	# Items
 
-	def getItems_GET(self):
+	def getItems(self):
 		url = self.apiUrl + self.__url_getItemsItems
 		response = requests.get(url)
 		if response.status_code == 200:
@@ -30,7 +30,7 @@ class Items(object):
 			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
 
 	
-	def getItemAddresses_GET(self):
+	def getItemAddresses(self):
 		url = self.apiUrl + self.__url_getItemAddresses
 		response = requests.get(url)
 		if response.status_code == 200:
@@ -39,7 +39,7 @@ class Items(object):
 			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
 
 
-	def ledger_GET(self):
+	def ledger(self):
 		url = self.apiUrl + self.__url_ledger
 		response = requests.get(url)
 		if response.status_code == 200:
@@ -47,7 +47,7 @@ class Items(object):
 		else:
 			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
 
-	def getItem_GET(self, item):
+	def getItem(self, item):
 		url = self.apiUrl + self.__url_getItem + item
 		response = requests.get(url)
 		if response.status_code == 200:
@@ -55,7 +55,7 @@ class Items(object):
 		else:
 			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
 
-	def getItemByAddress_GET(self, item):
+	def getItemByAddress(self, item):
 		url = self.apiUrl + self.__url_getItemByAddress + item
 		response = requests.get(url)
 		if response.status_code == 200:

@@ -17,7 +17,7 @@ class Events(object):
 
 	# Events
 
-	def fetchEvents_GET(self):
+	def fetchEvents(self):
 		url = self.apiUrl + self.__url_fetchevents
 		response = requests.get(url)
 		if response.status_code == 200:

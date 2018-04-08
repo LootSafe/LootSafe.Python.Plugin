@@ -19,7 +19,7 @@ class Balance(object):
 
 	# Balance
 
-	def balanceOf_GET(self, ethAcc):
+	def balanceOf(self, ethAcc):
 		url = self.apiUrl + self.__url_balanceOf + ethAcc
 		response = requests.get(url)
 		if response.status_code == 200:
@@ -27,7 +27,7 @@ class Balance(object):
 		else:
 			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
 
-	def itemBalance_GET(self, itemAddr, ethAcc):
+	def itemBalance(self, itemAddr, ethAcc):
 		url = self.apiUrl + self.__url_itemBalance	+ itemAddr + "/" + ethAcc	
 		response = requests.get(url)
 		if response.status_code == 200:
@@ -35,7 +35,7 @@ class Balance(object):
 		else:
 			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
 
-	def itemBalances_GET(self, ethAcc):
+	def itemBalances(self, ethAcc):
 		url = self.apiUrl + self.__url_itemBalances	+  ethAcc
 		response = requests.get(url)
 		if response.status_code == 200:

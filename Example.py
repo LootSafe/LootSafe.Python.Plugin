@@ -15,4 +15,4 @@ lootsafe = LootSafe(apiUrl, apiKey)
 
 print()
 print("=== Example ===\n")
-print(lootsafe.crafter.getCraftables_GET())
+print(lootsafe.crafter.getCraftables())

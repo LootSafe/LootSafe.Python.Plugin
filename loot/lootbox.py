@@ -22,7 +22,7 @@ class LootBox(object):
 
 	# LootBox
 
-	def getChances_GET(self):
+	def getChances(self):
 		url = self.apiUrl + self.__url_getChances
 		response = requests.get(url)
 		if response.status_code == 200:
@@ -31,7 +31,7 @@ class LootBox(object):
 			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
 
 	
-	def getCost_GET(self):
+	def getCost(self):
 		url = self.apiUrl + self.__url_getCost
 		response = requests.get(url)
 		if response.status_code == 200:
@@ -39,7 +39,7 @@ class LootBox(object):
 		else:
 			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
 
-	def getItems_GET(self, rarity):
+	def getItems(self, rarity):
 		url = self.apiUrl + self.__url_getItemsLootBox + rarity
 		response = requests.get(url)
 		if response.status_code == 200:
@@ -47,7 +47,7 @@ class LootBox(object):
 		else:
 			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
 
-	def addItem_POST(self, apiKey, otp, item, rarity):
+	def addItem(self, apiKey, otp, item, rarity):
 		url = self.apiUrl + self.__url_addItem
 		headers = {'key' : apiKey, 'otp' : otp}
 		postData = {'item' : item, 'rarity' : rarity}
@@ -58,7 +58,7 @@ class LootBox(object):
 			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
 
 	
-	def updateChance_GET(self, apiKey, otp, epic, rare, uncommon):	
+	def updateChance(self, apiKey, otp, epic, rare, uncommon):	
 		url = self.apiUrl + self.__url_updateChance + epic + "/" + rare + "/" + uncommon
 		headers = {'key' : apiKey, 'otp' : otp}
 		response = requests.get(url, headers=headers)
@@ -67,7 +67,7 @@ class LootBox(object):
 		else:
 			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
 
-	def updateLootBoxCost_GET(self, apiKey, otp, cost):
+	def updateLootBoxCost(self, apiKey, otp, cost):
 		url = self.apiUrl + self.__url_updateLootBoxCost + cost
 		headers = {'key' : apiKey, 'otp' : otp}
 		response = requests.get(url, headers=headers)
