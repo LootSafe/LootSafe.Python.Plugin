@@ -39,7 +39,7 @@ Output
 {'status': 200, 'message': 'Craftables fetched', 'data': []}
 ```
 
-## Endpoints
+### Endpoints
 
  Endpoint  | Type | Auth | Status |
 |---|---|---|---|
@@ -77,7 +77,7 @@ Output
 | lootbox.updateChance(apikey, opt, epic,  rare, uncommon) | **GET**  | AUTH  | Available |
 | lootbox.updateLootBoxCost(apikey, opt, cost)  | **GET**  | AUTH  | Available |
 
-## Issues & Future Development
+### Issues & Future Development
 
 * **[Server Issue]** crafter.newDeconstructionRecipe
 * **[Server Issue]** global.spawnItem
