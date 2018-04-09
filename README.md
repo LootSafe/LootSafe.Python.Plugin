@@ -77,6 +77,16 @@ Output
 | lootbox.updateChance(apikey, opt, epic,  rare, uncommon) | **GET**  | AUTH  | Available |
 | lootbox.updateLootBoxCost(apikey, opt, cost)  | **GET**  | AUTH  | Available |
 
+### Unit Tests
+
+Run
+
+```
+python -m unittest discover
+```
+
+inside the unit folder.
+
 ### Issues & Future Development
 
 * **[Server Issue]** crafter.newDeconstructionRecipe
