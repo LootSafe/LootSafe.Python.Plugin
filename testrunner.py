@@ -3,8 +3,8 @@ from lootsafe import LootSafe
 apiUrl = "http://localhost:1337/v1"
 apiKey = "pWpzWuxoKUKAmlHc0wPi7lFS38FTth"
 
-ethAcc = "0x2e4d853394e3d06d439b68ed7785e36a14f3a154"
-item = "0xf98cf41cf795ef4305237cb7485d35f028ade4b2"
+ethAcc = "0xcca93ab17df77f41863d76f222054d01c16d868a"
+item = "0xc359fb8fcf206c321fdb90236afbdc71e8c7e845"
 rarity = "uncommon"
 otpkey = "otpkey"
 
