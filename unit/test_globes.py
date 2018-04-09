@@ -5,12 +5,13 @@ import json
 sys.path.append("..")
 
 from lootsafe import LootSafe
+from unit_config import UnitConfig
 
 class TestLootSafeGlobes(unittest.TestCase):
 
-	apiUrl = "http://localhost:1337/v1"
-	apiKey = "pWpzWuxoKUKAmlHc0wPi7lFS38FTth"
-	otpkey = "otpkey"
+	apiUrl = UnitConfig.apiUrl
+	apiKey = UnitConfig.apiKey
+	otpkey = UnitConfig.otpkey
 
 	def test_fetchEvents(self):
 		lootsafe = LootSafe(self.apiUrl, self.apiKey)

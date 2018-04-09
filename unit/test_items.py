@@ -5,13 +5,14 @@ import json
 sys.path.append("..")
 
 from lootsafe import LootSafe
+from unit_config import UnitConfig
 
 class TestLootSafeItems(unittest.TestCase):
 
-	apiUrl = "http://localhost:1337/v1"
-	apiKey = "pWpzWuxoKUKAmlHc0wPi7lFS38FTth"
-	item = "0xc359fb8fcf206c321fdb90236afbdc71e8c7e845"
-
+	apiUrl = UnitConfig.apiUrl
+	apiKey = UnitConfig.apiKey
+	item = UnitConfig.item
+	
 	def test_getItems(self):
 		lootsafe = LootSafe(self.apiUrl, self.apiKey)
 		result = lootsafe.items.getItems()

@@ -1,16 +1,18 @@
 import sys
 import unittest
 import json
+import unit_config
 
 sys.path.append("..")
 
 from lootsafe import LootSafe
+from unit_config import UnitConfig
 
 class TestLootSafeBalance(unittest.TestCase):
 
-	apiUrl = "http://localhost:1337/v1"
-	apiKey = "pWpzWuxoKUKAmlHc0wPi7lFS38FTth"
-	ethAcc = "0xcca93ab17df77f41863d76f222054d01c16d868a"
+	apiUrl = UnitConfig.apiUrl
+	apiKey = UnitConfig.apiKey
+	ethAcc = UnitConfig.ethAcc
 
 	def test_balanceOf(self):
 		lootsafe = LootSafe(self.apiUrl, self.apiKey)
