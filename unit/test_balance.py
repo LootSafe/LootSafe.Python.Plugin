@@ -19,7 +19,6 @@ class TestLootSafeBalance(unittest.TestCase):
 		result = lootsafe.balance.balanceOf(self.ethAcc)
 
 		self.assertEqual(result['status'], 200)
-		self.assertEqual(result['message'], 'Balance fetched')
 		self.assertIsNotNone(result['data'])
 		self.assertTrue(result['data'].isdigit())
 
@@ -28,7 +27,6 @@ class TestLootSafeBalance(unittest.TestCase):
 		result = lootsafe.balance.balanceOf(self.ethAcc)
 
 		self.assertEqual(result['status'], 200)
-		self.assertEqual(result['message'], 'Balance fetched')
 		self.assertIsNotNone(result['data'])
 		self.assertTrue(result['data'].isdigit())
 
@@ -38,7 +36,6 @@ class TestLootSafeBalance(unittest.TestCase):
 		result = lootsafe.balance.balanceOf(self.ethAcc)
 
 		self.assertEqual(result['status'], 200)
-		self.assertEqual(result['message'], 'Balance fetched')
 		self.assertIsNotNone(result['data'])
 		self.assertTrue(result['data'].isdigit())
 

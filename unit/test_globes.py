@@ -31,7 +31,6 @@ class TestLootSafeGlobes(unittest.TestCase):
 		result = lootsafe.globe.newItem(self.apiKey, self.otpkey, "FNX45", "fnx45", 120000, "metadata")
 
 		self.assertEqual(result['status'], 200)
-		self.assertEqual(result['message'], 'Created new item')
 
 if __name__ == '__main__':
 	unittest.main()

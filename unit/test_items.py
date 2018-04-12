@@ -18,7 +18,6 @@ class TestLootSafeItems(unittest.TestCase):
 		result = lootsafe.items.getItems()
 
 		self.assertEqual(result['status'], 200)
-		self.assertEqual(result['message'], 'Items fetched')
 		self.assertTrue(type(result['data']) == list)
 
 	def test_getItemAddresses(self):
@@ -26,7 +25,6 @@ class TestLootSafeItems(unittest.TestCase):
 		result = lootsafe.items.getItemAddresses()
 
 		self.assertEqual(result['status'], 200)
-		self.assertEqual(result['message'], 'Item addresses fetched')
 		self.assertTrue(type(result['data']) == dict)
 
 	def test_ledger(self):
@@ -34,7 +32,6 @@ class TestLootSafeItems(unittest.TestCase):
 		result = lootsafe.items.ledger()
 
 		self.assertEqual(result['status'], 200)
-		self.assertEqual(result['message'], 'Items fetched')
 		self.assertTrue(type(result['data']) == list)		
 
 	def test_getItem(self):
@@ -42,7 +39,6 @@ class TestLootSafeItems(unittest.TestCase):
 		result = lootsafe.items.getItem(self.item)
 
 		self.assertEqual(result['status'], 200)
-		self.assertEqual(result['message'], 'Item fetched')
 		self.assertTrue(type(result['data']) == dict)		
 
 
@@ -51,7 +47,6 @@ class TestLootSafeItems(unittest.TestCase):
 		result = lootsafe.items.getItemByAddress(self.item)
 
 		self.assertEqual(result['status'], 200)
-		self.assertEqual(result['message'], 'Item fetched')
 		self.assertTrue(type(result['data']) == dict)		
 
 if __name__ == '__main__':

@@ -17,7 +17,6 @@ class TestLootSafeEvents(unittest.TestCase):
 		result = lootsafe.events.fetchEvents()
 
 		self.assertEqual(result['status'], 200)
-		self.assertEqual(result['message'], 'Events Fetched')
 		self.assertTrue(type(result['data']) == list)
 
 if __name__ == '__main__':
