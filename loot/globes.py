@@ -27,7 +27,7 @@ class Globals(object):
 		if response.status_code == 200:
 			return response.json()
 		else:
-			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
+			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}"
 
 	def getTokenAddress(self):		
 		url = self.apiUrl + self.__url_getTokenAddress
@@ -35,7 +35,7 @@ class Globals(object):
 		if response.status_code == 200:
 			return response.json()
 		else:
-			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
+			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}"
 
 
 	def newItem(self, apiKey, otp, name, id, totalSupply, metadata):
@@ -46,8 +46,4 @@ class Globals(object):
 		if response.status_code == 200:
 			return response.json()
 		else:
-			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
-
-
-	#spawnItem(string apiKey, string otp)
-	#clearAvailability(string apiKey, string otp)
+			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}"

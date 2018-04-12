@@ -29,7 +29,7 @@ class Crafter(object):
 		if response.status_code == 200:
 			return response.json()
 		else:
-			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
+			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}"
 
 	def getDeconstructables(self):
 		url = self.apiUrl + self.__url_getDeconstructables
@@ -37,7 +37,7 @@ class Crafter(object):
 		if response.status_code == 200:
 			return response.json()
 		else:
-			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
+			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}"
 
 
 	def getDeconstructionRecipe(self, item):
@@ -46,7 +46,7 @@ class Crafter(object):
 		if response.status_code == 200:
 			return response.json()
 		else:
-			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
+			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}"
 
 
 	def getRecipe(self, item):
@@ -55,7 +55,7 @@ class Crafter(object):
 		if response.status_code == 200:
 			return response.json()
 		else:
-			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
+			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}"
 
 
 	def newRecipe(self, apiKey, otp, result, materials, counts):
@@ -66,7 +66,7 @@ class Crafter(object):
 		if response.status_code == 200:
 			return response.json()
 		else:
-			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
+			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}"
 
 
 	def removeRecipe(self, apiKey, otp, item):		
@@ -77,7 +77,4 @@ class Crafter(object):
 		if response.status_code == 200:
 			return response.json()
 		else:
-			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
-
-
-	#def newDeconstructionRecipe(self, apiKey, otp):			
+			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}"

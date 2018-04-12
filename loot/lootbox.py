@@ -28,7 +28,7 @@ class LootBox(object):
 		if response.status_code == 200:
 			return response.json()
 		else:
-			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
+			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}"
 
 	
 	def getCost(self):
@@ -37,7 +37,7 @@ class LootBox(object):
 		if response.status_code == 200:
 			return response.json()
 		else:
-			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
+			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}"
 
 	def getItems(self, rarity):
 		url = self.apiUrl + self.__url_getItemsLootBox + rarity
@@ -45,7 +45,7 @@ class LootBox(object):
 		if response.status_code == 200:
 			return response.json()
 		else:
-			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
+			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}"
 
 	def addItem(self, apiKey, otp, item, rarity):
 		url = self.apiUrl + self.__url_addItem
@@ -55,7 +55,7 @@ class LootBox(object):
 		if response.status_code == 200:
 			return response.json()
 		else:
-			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
+			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}"
 
 	
 	def updateChance(self, apiKey, otp, epic, rare, uncommon):	
@@ -65,7 +65,7 @@ class LootBox(object):
 		if response.status_code == 200:
 			return response.json()
 		else:
-			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
+			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}"
 
 	def updateLootBoxCost(self, apiKey, otp, cost):
 		url = self.apiUrl + self.__url_updateLootBoxCost + cost
@@ -74,4 +74,4 @@ class LootBox(object):
 		if response.status_code == 200:
 			return response.json()
 		else:
-			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
+			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}"

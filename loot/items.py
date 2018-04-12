@@ -27,7 +27,7 @@ class Items(object):
 		if response.status_code == 200:
 			return response.json()
 		else:
-			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
+			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}"
 
 	
 	def getItemAddresses(self):
@@ -36,7 +36,7 @@ class Items(object):
 		if response.status_code == 200:
 			return response.json()
 		else:
-			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
+			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}"
 
 
 	def ledger(self):
@@ -45,7 +45,7 @@ class Items(object):
 		if response.status_code == 200:
 			return response.json()
 		else:
-			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
+			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}"
 
 	def getItem(self, item):
 		url = self.apiUrl + self.__url_getItem + item
@@ -53,7 +53,7 @@ class Items(object):
 		if response.status_code == 200:
 			return response.json()
 		else:
-			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
+			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}"
 
 	def getItemByAddress(self, item):
 		url = self.apiUrl + self.__url_getItemByAddress + item
@@ -61,4 +61,4 @@ class Items(object):
 		if response.status_code == 200:
 			return response.json()
 		else:
-			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
+			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}"

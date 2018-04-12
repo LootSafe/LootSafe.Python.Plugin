@@ -54,15 +54,12 @@ Output
 | crafter.getRecipe(item) | **GET**  | OPEN   | Available |
 | crafter.newRecipe(apiKey, otp, result, materials, counts)  | **POST**  | AUTH   | Available |
 | crafter.removeRecipe(apiKey, otp, item)  | **POST**  | AUTH   | Available |
-| ~~newDeconstructionRecipe(apiKey, otp)~~ | **POST**  | AUTH   | Unavailable |
 | **Events**  |   |   |   |
 | events.fetchEvents()  | **GET**  | OPEN   | Available |
 | **Globals**  |   |   |   |
 | globe.getMeta()  | **GET**  | OPEN   | Available |
 | globe.getTokenAddress()  | **GET**  | OPEN   | Available |
 | globe.newItem(apiKey, otp, name, id, totalSupply, metadata) | **POST**  | AUTH   | Available |
-| ~~spawnItem(apiKey, otp)~~  | **POST**   | AUTH   | Unavailable |
-| ~~clearAvailability(apiKey, otp)~~  | **POST**   | AUTH   | Unavailable |
 | **Items**  |   |   |   |
 | items.getItems()  | **GET**  | OPEN   | Available |
 | items.getItemAddresses()  | **GET**  | OPEN   | Available |

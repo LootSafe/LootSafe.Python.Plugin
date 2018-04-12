@@ -25,7 +25,7 @@ class Balance(object):
 		if response.status_code == 200:
 			return response.json()
 		else:
-			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
+			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}"
 
 	def itemBalance(self, itemAddr, ethAcc):
 		url = self.apiUrl + self.__url_itemBalance	+ itemAddr + "/" + ethAcc	
@@ -33,7 +33,7 @@ class Balance(object):
 		if response.status_code == 200:
 			return response.json()
 		else:
-			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
+			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}"
 
 	def itemBalances(self, ethAcc):
 		url = self.apiUrl + self.__url_itemBalances	+  ethAcc
@@ -41,4 +41,4 @@ class Balance(object):
 		if response.status_code == 200:
 			return response.json()
 		else:
-			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}";
+			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}"
