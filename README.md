@@ -61,14 +61,14 @@ Output
 | globe.getMeta()  | **GET**  | OPEN   | Available |
 | globe.getTokenAddress()  | **GET**  | OPEN   | Available |
 | globe.newItem(apiKey, otp, name, id, totalSupply, metadata) | **POST**  | AUTH   | Available |
-| globe.spawnItem(item, useraccount) | **POST**  | OPEN   | Available |
-| globe.clearAvailability(item, useraccount) | **POST**  | OPEN   | Available |
 | **Items**  |   |   |   |
 | items.getItems()  | **GET**  | OPEN   | Available |
 | items.getItemAddresses()  | **GET**  | OPEN   | Available |
 | items.ledger()  | **GET**  | OPEN   | Available |
 | items.getItem(item)  | **GET**  | OPEN   | Available |
 | items.getItemByAddress(item) | **GET**  | OPEN   | Available |
+| items.spawnItem(item, useraccount) | **POST**  | OPEN   | Available |
+| items.clearAvailability(item, useraccount) | **POST**  | OPEN   | Available |
 | **LootBox** |   |   |   |
 | lootbox.getChances()  | **GET**  | OPEN   | Available |
 | lootbox.getCost()  | **GET**  | OPEN   | Available |
