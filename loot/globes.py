@@ -1,4 +1,5 @@
 import requests
+import json
 
 class Globals(object):
 
@@ -8,8 +9,6 @@ class Globals(object):
 	# Globals Urls
 
 	__url_newItem = "/item/new"
-	__url_spawnItem = "/item/new"
-	__url_clearAvailability = "/item/new"
 	__url_meta = "/"
 	__url_getTokenAddress = "/address/token/"
 
@@ -27,7 +26,8 @@ class Globals(object):
 		if response.status_code == 200:
 			return response.json()
 		else:
-			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}"
+			result = '{{"status": {0} , "message": {1}, "data" : "null"}}'.format(response.status_code, response.text)			
+			return json.loads(result)
 
 	def getTokenAddress(self):		
 		url = self.apiUrl + self.__url_getTokenAddress
@@ -35,15 +35,16 @@ class Globals(object):
 		if response.status_code == 200:
 			return response.json()
 		else:
-			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}"
-
+			result = '{{"status": {0} , "message": {1}, "data" : "null"}}'.format(response.status_code, response.text)			
+			return json.loads(result)
 
 	def newItem(self, apiKey, otp, name, id, totalSupply, metadata):
 		url = self.apiUrl + self.__url_newItem
-		headers = {'key' : apiKey, 'otp' : otp}
+		headers = {'Content-Type' : 'application/json', 'Accept' : 'application/json' , 'key' : apiKey, 'otp' : otp}
 		postData = {'name' : name, 'id' : id, 'totalSupply' : totalSupply, 'metadata' : metadata}
-		response = requests.post(url, data=postData, headers=headers)
+		response = requests.post(url, data = json.dumps(postData), headers = headers)
 		if response.status_code == 200:
 			return response.json()
 		else:
-			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}"
+			result = '{{"status": {0} , "message": {1}, "data" : "null"}}'.format(response.status_code, response.text)			
+			return json.loads(result)					

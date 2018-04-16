@@ -1,6 +1,5 @@
 import sys
 import unittest
-import json
 
 sys.path.append("..")
 
@@ -49,6 +48,12 @@ class TestLootSafeCrafter(unittest.TestCase):
 	def test_newRecipe(self):
 		lootsafe = LootSafe(self.apiUrl, self.apiKey)
 		result = lootsafe.crafter.newRecipe(self.apiKey, self.otpkey, '123456', ["1212", "3434"] , [1,2])		
+
+		self.assertEqual(result['status'], 200)
+
+	def test_newDestructionRecipe(self):
+		lootsafe = LootSafe(self.apiUrl, self.apiKey)
+		result = lootsafe.crafter.newDestructionRecipe(self.apiKey, self.otpkey, '123456', ["1212", "3434"] , [1,2])		
 
 		self.assertEqual(result['status'], 200)
 

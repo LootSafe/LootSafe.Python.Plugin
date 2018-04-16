@@ -54,12 +54,15 @@ Output
 | crafter.getRecipe(item) | **GET**  | OPEN   | Available |
 | crafter.newRecipe(apiKey, otp, result, materials, counts)  | **POST**  | AUTH   | Available |
 | crafter.removeRecipe(apiKey, otp, item)  | **POST**  | AUTH   | Available |
+| crafter.newDestructionRecipe(self, apiKey, otp, result, materials, counts) | **POST**  | OPEN   | Available |
 | **Events**  |   |   |   |
 | events.fetchEvents()  | **GET**  | OPEN   | Available |
 | **Globals**  |   |   |   |
 | globe.getMeta()  | **GET**  | OPEN   | Available |
 | globe.getTokenAddress()  | **GET**  | OPEN   | Available |
 | globe.newItem(apiKey, otp, name, id, totalSupply, metadata) | **POST**  | AUTH   | Available |
+| globe.spawnItem(item, useraccount) | **POST**  | OPEN   | Available |
+| globe.clearAvailability(item, useraccount) | **POST**  | OPEN   | Available |
 | **Items**  |   |   |   |
 | items.getItems()  | **GET**  | OPEN   | Available |
 | items.getItemAddresses()  | **GET**  | OPEN   | Available |
@@ -79,13 +82,8 @@ Output
 Run
 
 ```
+cd unit
 python -m unittest discover
 ```
 
 inside the unit folder.
-
-### Issues & Future Development
-
-* **[Server Issue]** crafter.newDeconstructionRecipe
-* **[Server Issue]** global.spawnItem
-* **[Server Issue]** global.clearAvailability

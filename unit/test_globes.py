@@ -12,6 +12,8 @@ class TestLootSafeGlobes(unittest.TestCase):
 	apiUrl = UnitConfig.apiUrl
 	apiKey = UnitConfig.apiKey
 	otpkey = UnitConfig.otpkey
+	ethAcc = UnitConfig.ethAcc
+	item = UnitConfig.item
 
 	def test_fetchEvents(self):
 		lootsafe = LootSafe(self.apiUrl, self.apiKey)

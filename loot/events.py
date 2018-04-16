@@ -1,4 +1,5 @@
 import requests
+import json
 
 class Events(object):
 
@@ -23,4 +24,5 @@ class Events(object):
 		if response.status_code == 200:
 			return response.json()
 		else:
-			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}"
+			result = '{{"status": {0} , "message": {1}, "data" : "null"}}'.format(response.status_code, response.text)			
+			return json.loads(result)

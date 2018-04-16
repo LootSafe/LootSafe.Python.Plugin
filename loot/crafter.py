@@ -1,4 +1,5 @@
 import requests
+import json
 
 class Crafter(object):
 
@@ -29,7 +30,8 @@ class Crafter(object):
 		if response.status_code == 200:
 			return response.json()
 		else:
-			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}"
+			result = '{{"status": {0} , "message": {1}, "data" : "null"}}'.format(response.status_code, response.text)			
+			return json.loads(result)
 
 	def getDeconstructables(self):
 		url = self.apiUrl + self.__url_getDeconstructables
@@ -37,8 +39,8 @@ class Crafter(object):
 		if response.status_code == 200:
 			return response.json()
 		else:
-			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}"
-
+			result = '{{"status": {0} , "message": {1}, "data" : "null"}}'.format(response.status_code, response.text)			
+			return json.loads(result)
 
 	def getDeconstructionRecipe(self, item):
 		url = self.apiUrl + self.__url_getDeconstructablesRecipe + item
@@ -46,8 +48,8 @@ class Crafter(object):
 		if response.status_code == 200:
 			return response.json()
 		else:
-			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}"
-
+			result = '{{"status": {0} , "message": {1}, "data" : "null"}}'.format(response.status_code, response.text)			
+			return json.loads(result)
 
 	def getRecipe(self, item):
 		url = self.apiUrl + self.__url_getRecipe + item
@@ -55,26 +57,38 @@ class Crafter(object):
 		if response.status_code == 200:
 			return response.json()
 		else:
-			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}"
-
+			result = '{{"status": {0} , "message": {1}, "data" : "null"}}'.format(response.status_code, response.text)			
+			return json.loads(result)
 
 	def newRecipe(self, apiKey, otp, result, materials, counts):
 		url = self.apiUrl + self.__url_newRecipe
-		headers = {'key' : apiKey, 'otp' : otp}
+		headers = {'Content-Type' : 'application/json', 'Accept' : 'application/json' , 'key' : apiKey, 'otp' : otp}
 		postData = {'result': result, 'materials': materials, 'counts': counts}
-		response = requests.post(url, data=postData, headers=headers)
+		response = requests.post(url, data = json.dumps(postData), headers = headers)
 		if response.status_code == 200:
 			return response.json()
 		else:
-			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}"
+			result = '{{"status": {0} , "message": {1}, "data" : "null"}}'.format(response.status_code, response.text)			
+			return json.loads(result)
 
+	def newDestructionRecipe(self, apiKey, otp, result, materials, counts):
+		url = self.apiUrl + self.__url_newDeconstructionRecipe
+		headers = {'Content-Type' : 'application/json', 'Accept' : 'application/json' , 'key' : apiKey, 'otp' : otp}
+		postData = {'result': result, 'materials': materials, 'counts': counts}
+		response = requests.post(url, data = json.dumps(postData), headers = headers)
+		if response.status_code == 200:
+			return response.json()
+		else:
+			result = '{{"status": {0} , "message": {1}, "data" : "null"}}'.format(response.status_code, response.text)			
+			return json.loads(result)
 
 	def removeRecipe(self, apiKey, otp, item):		
 		url = self.apiUrl + self.__url_removeRecipe
-		headers = {'key' : apiKey, 'otp' : otp}
+		headers = {'Content-Type' : 'application/json', 'Accept' : 'application/json' , 'key' : apiKey, 'otp' : otp}
 		postData = {'item' : item}
-		response = requests.post(url, data=postData, headers=headers)
+		response = requests.post(url, data = json.dumps(postData), headers = headers)
 		if response.status_code == 200:
 			return response.json()
 		else:
-			return "{'status': " + str(response.status_code) + ", 'message': '" + response.text + "', 'data' : 'null'}"
+			result = '{{"status": {0} , "message": {1}, "data" : "null"}}'.format(response.status_code, response.text)			
+			return json.loads(result)
