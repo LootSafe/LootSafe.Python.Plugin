@@ -10,9 +10,9 @@ from unit_config import UnitConfig
 class TestLootSafeBalance(unittest.TestCase):
 
 	apiUrl = UnitConfig.apiUrl
-	apiKey = UnitConfig.apiKey
-	item = UnitConfig.item
-	otpkey = UnitConfig.otpkey
+	apiKey = UnitConfig.apiKey	
+	otpKey = UnitConfig.otpKey
+	itemAddress = UnitConfig.itemAddress
 	rarity = UnitConfig.rarity
 
 	def test_getChances(self):
@@ -38,21 +38,21 @@ class TestLootSafeBalance(unittest.TestCase):
 
 	def test_addItem(self):
 		lootsafe = LootSafe(self.apiUrl, self.apiKey)
-		result = lootsafe.lootbox.addItem(self.apiKey, self.otpkey, self.item, self.rarity)
+		result = lootsafe.lootbox.addItem(self.apiKey, self.otpKey, self.itemAddress, self.rarity)
 
 		self.assertEqual(result['status'], 200)
 		self.assertTrue(type(result['data']) == dict)
 
 	def test_updateChance(self):
 		lootsafe = LootSafe(self.apiUrl, self.apiKey)
-		result = lootsafe.lootbox.updateChance(self.apiKey, self.otpkey, "1", "2", "3")
+		result = lootsafe.lootbox.updateChance(self.apiKey, self.otpKey, "1", "2", "3")
 
 		self.assertEqual(result['status'], 200)
 		self.assertTrue(type(result['data']) == dict)
 
 	def test_updateLootBoxCost(self):
 		lootsafe = LootSafe(self.apiUrl, self.apiKey)
-		result = lootsafe.lootbox.updateLootBoxCost(self.apiKey, self.otpkey, "1")
+		result = lootsafe.lootbox.updateLootBoxCost(self.apiKey, self.otpKey, "1")
 		
 		self.assertEqual(result['status'], 200)
 		self.assertTrue(type(result['data']) == dict)

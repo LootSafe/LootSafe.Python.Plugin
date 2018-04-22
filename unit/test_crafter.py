@@ -10,9 +10,8 @@ class TestLootSafeCrafter(unittest.TestCase):
 
 	apiUrl = UnitConfig.apiUrl
 	apiKey = UnitConfig.apiKey
-	ethAcc = UnitConfig.ethAcc
-	item = UnitConfig.item
-	otpkey = UnitConfig.otpkey
+	otpKey = UnitConfig.otpKey
+	itemAddress = UnitConfig.itemAddress
 
 	def test_getCraftables(self):
 		lootsafe = LootSafe(self.apiUrl, self.apiKey)
@@ -31,7 +30,7 @@ class TestLootSafeCrafter(unittest.TestCase):
 
 	def test_getDeconstructionRecipe(self):
 		lootsafe = LootSafe(self.apiUrl, self.apiKey)
-		result = lootsafe.crafter.getDeconstructionRecipe(self.item)
+		result = lootsafe.crafter.getDeconstructionRecipe(self.itemAddress)
 
 		self.assertEqual(result['status'], 200)
 		self.assertTrue(type(result['data']) == list)
@@ -39,7 +38,7 @@ class TestLootSafeCrafter(unittest.TestCase):
 
 	def test_getRecipe(self):
 		lootsafe = LootSafe(self.apiUrl, self.apiKey)
-		result = lootsafe.crafter.getRecipe(self.item)
+		result = lootsafe.crafter.getRecipe(self.itemAddress)
 
 		self.assertEqual(result['status'], 200)
 		self.assertTrue(type(result['data']) == list)
@@ -47,19 +46,19 @@ class TestLootSafeCrafter(unittest.TestCase):
 
 	def test_newRecipe(self):
 		lootsafe = LootSafe(self.apiUrl, self.apiKey)
-		result = lootsafe.crafter.newRecipe(self.apiKey, self.otpkey, '123456', ["1212", "3434"] , [1,2])		
+		result = lootsafe.crafter.newRecipe(self.apiKey, self.otpKey, '123456', ["1212", "3434"] , [1,2])		
 
 		self.assertEqual(result['status'], 200)
 
 	def test_newDestructionRecipe(self):
 		lootsafe = LootSafe(self.apiUrl, self.apiKey)
-		result = lootsafe.crafter.newDestructionRecipe(self.apiKey, self.otpkey, '123456', ["1212", "3434"] , [1,2])		
+		result = lootsafe.crafter.newDestructionRecipe(self.apiKey, self.otpKey, '123456', ["1212", "3434"] , [1,2])		
 
 		self.assertEqual(result['status'], 200)
 
 	def test_removeRecipe(self):
 		lootsafe = LootSafe(self.apiUrl, self.apiKey)
-		result = lootsafe.crafter.removeRecipe(self.apiKey, self.otpkey, self.item)
+		result = lootsafe.crafter.removeRecipe(self.apiKey, self.otpKey, self.itemAddress)
 
 		self.assertEqual(result['status'], 200)
 

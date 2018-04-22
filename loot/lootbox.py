@@ -8,12 +8,12 @@ class LootBox(object):
 
 	# LootBox Urls
 
-	__url_getChances = "/lootbox/chances"
-	__url_getCost = "/lootbox/cost"
-	__url_getItemsLootBox = "/lootbox/items/"
-	__url_addItem = "/lootbox/item/add"
-	__url_updateChance = "/lootbox/chances/update/"
-	__url_updateLootBoxCost = "/lootbox/cost/"
+	__url_getChances = "lootbox/chances"
+	__url_getCost = "lootbox/cost"
+	__url_getItemsLootBox = "lootbox/items/"
+	__url_addItem = "lootbox/item/add"
+	__url_updateChance = "lootbox/chances/update/"
+	__url_updateLootBoxCost = "lootbox/cost/"
 
 	# Init
 
@@ -51,10 +51,10 @@ class LootBox(object):
 			result = '{{"status": {0} , "message": {1}, "data" : "null"}}'.format(response.status_code, response.text)			
 			return json.loads(result)
 
-	def addItem(self, apiKey, otp, item, rarity):
+	def addItem(self, apiKey, otp, itemAddress, rarity):
 		url = self.apiUrl + self.__url_addItem
 		headers = {'key' : apiKey, 'otp' : otp}
-		postData = {'item' : item, 'rarity' : rarity}
+		postData = {'item' : itemAddress, 'rarity' : rarity}
 		response = requests.post(url, data=postData, headers=headers)
 		if response.status_code == 200:
 			return response.json()

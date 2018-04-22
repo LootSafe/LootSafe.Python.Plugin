@@ -12,11 +12,11 @@ class TestLootSafeBalance(unittest.TestCase):
 
 	apiUrl = UnitConfig.apiUrl
 	apiKey = UnitConfig.apiKey
-	ethAcc = UnitConfig.ethAcc
+	account = UnitConfig.account
 
 	def test_balanceOf(self):
 		lootsafe = LootSafe(self.apiUrl, self.apiKey)
-		result = lootsafe.balance.balanceOf(self.ethAcc)
+		result = lootsafe.balance.balanceOf(self.account)
 
 		self.assertEqual(result['status'], 200)
 		self.assertIsNotNone(result['data'])
@@ -24,16 +24,15 @@ class TestLootSafeBalance(unittest.TestCase):
 
 	def test_itemBalance(self):
 		lootsafe = LootSafe(self.apiUrl, self.apiKey)
-		result = lootsafe.balance.balanceOf(self.ethAcc)
+		result = lootsafe.balance.balanceOf(self.account)
 
 		self.assertEqual(result['status'], 200)
 		self.assertIsNotNone(result['data'])
 		self.assertTrue(result['data'].isdigit())
 
-
 	def test_itemBalances(self):
 		lootsafe = LootSafe(self.apiUrl, self.apiKey)
-		result = lootsafe.balance.balanceOf(self.ethAcc)
+		result = lootsafe.balance.balanceOf(self.account)
 
 		self.assertEqual(result['status'], 200)
 		self.assertIsNotNone(result['data'])

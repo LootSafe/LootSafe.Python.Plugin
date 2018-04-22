@@ -4,7 +4,7 @@ from lootsafe import LootSafe
 
 # Required Configurable Variables
 
-apiUrl = "http://localhost:1337/v1"
+apiUrl = "http://localhost:1337/v1/"
 apiKey = "pWpzWuxoKUKAmlHc0wPi7lFS38FTth"
 
 # Creating and Initialzing the LootSafe Object

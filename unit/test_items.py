@@ -11,9 +11,9 @@ class TestLootSafeItems(unittest.TestCase):
 
 	apiUrl = UnitConfig.apiUrl
 	apiKey = UnitConfig.apiKey
-	item = UnitConfig.item
-	otpkey = UnitConfig.otpkey
-	ethAcc = UnitConfig.ethAcc
+	otpKey = UnitConfig.otpKey	
+	itemAddress = UnitConfig.itemAddress
+	account = UnitConfig.account
 	
 	def test_getItems(self):
 		lootsafe = LootSafe(self.apiUrl, self.apiKey)
@@ -38,7 +38,7 @@ class TestLootSafeItems(unittest.TestCase):
 
 	def test_getItem(self):
 		lootsafe = LootSafe(self.apiUrl, self.apiKey)
-		result = lootsafe.items.getItem(self.item)
+		result = lootsafe.items.getItem(self.itemAddress)
 
 		self.assertEqual(result['status'], 200)
 		self.assertTrue(type(result['data']) == dict)		
@@ -46,21 +46,21 @@ class TestLootSafeItems(unittest.TestCase):
 
 	def test_getItemByAddress(self):
 		lootsafe = LootSafe(self.apiUrl, self.apiKey)
-		result = lootsafe.items.getItemByAddress(self.item)
+		result = lootsafe.items.getItemByAddress(self.itemAddress)
 
 		self.assertEqual(result['status'], 200)
 		self.assertTrue(type(result['data']) == dict)	
 
 	def test_getSpawnItem(self):
 		lootsafe = LootSafe(self.apiUrl, self.apiKey)
-		result = lootsafe.items.spawnItem(self.apiKey, self.otpkey, self.item, self.ethAcc)
+		result = lootsafe.items.spawnItem(self.apiKey, self.otpKey, self.itemAddress, self.account)
 
 		self.assertEqual(result['status'], 200)
 		self.assertTrue(type(result['address']) == str)
 
 	def test_clearAvailability(self):
 		lootsafe = LootSafe(self.apiUrl, self.apiKey)
-		result = lootsafe.items.clearAvailability(self.apiKey, self.otpkey, self.item, self.ethAcc)
+		result = lootsafe.items.clearAvailability(self.apiKey, self.otpKey, self.itemAddress)
 
 		self.assertEqual(result['status'], 200)					
 

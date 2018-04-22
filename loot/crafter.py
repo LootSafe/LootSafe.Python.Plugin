@@ -8,13 +8,13 @@ class Crafter(object):
 
 	# Crafter Urls
 
-	__url_getCraftables = "/craftables"
-	__url_getDeconstructables = "/deconstructables"
-	__url_getDeconstructablesRecipe = "/recipe/deconstruction/get/"
-	__url_getRecipe = "/recipe/get/"
-	__url_newRecipe = "/recipe/new"
-	__url_removeRecipe = "/recipe/remove"
-	__url_newDeconstructionRecipe = "/recipe/deconstruction/new"
+	__url_getCraftables = "craftables"
+	__url_getDeconstructables = "deconstructables"
+	__url_getDeconstructablesRecipe = "recipe/deconstruction/get/"
+	__url_getRecipe = "recipe/get/"
+	__url_newRecipe = "recipe/new"
+	__url_removeRecipe = "recipe/remove"
+	__url_newDeconstructionRecipe = "recipe/deconstruction/new"
 
 	# Init
 
@@ -42,8 +42,8 @@ class Crafter(object):
 			result = '{{"status": {0} , "message": {1}, "data" : "null"}}'.format(response.status_code, response.text)			
 			return json.loads(result)
 
-	def getDeconstructionRecipe(self, item):
-		url = self.apiUrl + self.__url_getDeconstructablesRecipe + item
+	def getDeconstructionRecipe(self, itemAddress):
+		url = self.apiUrl + self.__url_getDeconstructablesRecipe + itemAddress
 		response = requests.get(url)
 		if response.status_code == 200:
 			return response.json()
@@ -51,8 +51,8 @@ class Crafter(object):
 			result = '{{"status": {0} , "message": {1}, "data" : "null"}}'.format(response.status_code, response.text)			
 			return json.loads(result)
 
-	def getRecipe(self, item):
-		url = self.apiUrl + self.__url_getRecipe + item
+	def getRecipe(self, itemAddress):
+		url = self.apiUrl + self.__url_getRecipe + itemAddress
 		response = requests.get(url)
 		if response.status_code == 200:
 			return response.json()
@@ -82,10 +82,10 @@ class Crafter(object):
 			result = '{{"status": {0} , "message": {1}, "data" : "null"}}'.format(response.status_code, response.text)			
 			return json.loads(result)
 
-	def removeRecipe(self, apiKey, otp, item):		
+	def removeRecipe(self, apiKey, otp, itemAddress):		
 		url = self.apiUrl + self.__url_removeRecipe
 		headers = {'Content-Type' : 'application/json', 'Accept' : 'application/json' , 'key' : apiKey, 'otp' : otp}
-		postData = {'item' : item}
+		postData = {'item' : itemAddress}
 		response = requests.post(url, data = json.dumps(postData), headers = headers)
 		if response.status_code == 200:
 			return response.json()

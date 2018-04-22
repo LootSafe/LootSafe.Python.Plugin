@@ -8,9 +8,9 @@ class Globals(object):
 
 	# Globals Urls
 
-	__url_newItem = "/item/new"
-	__url_meta = "/"
-	__url_getTokenAddress = "/address/token/"
+	__url_meta = ""
+	__url_newItem = "item/new"
+	__url_getTokenAddress = "address/token/"
 
 	# Init
 

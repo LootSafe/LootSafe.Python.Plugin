@@ -8,9 +8,9 @@ class Balance(object):
 
 	# Balance Urls
 
-	__url_balanceOf = "/balance/token/"
-	__url_itemBalance = "/balance/item/"
-	__url_itemBalances = "/balance/items/"
+	__url_balanceOf = "balance/token/"
+	__url_itemBalance = "balance/item/"
+	__url_itemBalances = "balance/items/"
 
 	# Init
 
@@ -20,8 +20,8 @@ class Balance(object):
 
 	# Balance
 
-	def balanceOf(self, ethAcc):
-		url = self.apiUrl + self.__url_balanceOf + ethAcc
+	def balanceOf(self, account):
+		url = self.apiUrl + self.__url_balanceOf + account
 		response = requests.get(url)
 		if response.status_code == 200:
 			return response.json()
@@ -29,8 +29,8 @@ class Balance(object):
 			result = '{{"status": {0} , "message": {1}, "data" : "null"}}'.format(response.status_code, response.text)			
 			return json.loads(result)
 
-	def itemBalance(self, itemAddr, ethAcc):
-		url = self.apiUrl + self.__url_itemBalance	+ itemAddr + "/" + ethAcc	
+	def itemBalance(self, itemAddress, account):
+		url = self.apiUrl + self.__url_itemBalance	+ itemAddress + "/" + account	
 		response = requests.get(url)
 		if response.status_code == 200:
 			return response.json()
@@ -38,8 +38,8 @@ class Balance(object):
 			result = '{{"status": {0} , "message": {1}, "data" : "null"}}'.format(response.status_code, response.text)			
 			return json.loads(result)
 
-	def itemBalances(self, ethAcc):
-		url = self.apiUrl + self.__url_itemBalances	+  ethAcc
+	def itemBalances(self, account):
+		url = self.apiUrl + self.__url_itemBalances	+  account
 		response = requests.get(url)
 		if response.status_code == 200:
 			return response.json()

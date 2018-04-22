@@ -11,9 +11,7 @@ class TestLootSafeGlobes(unittest.TestCase):
 
 	apiUrl = UnitConfig.apiUrl
 	apiKey = UnitConfig.apiKey
-	otpkey = UnitConfig.otpkey
-	ethAcc = UnitConfig.ethAcc
-	item = UnitConfig.item
+	otpKey = UnitConfig.otpKey
 
 	def test_fetchEvents(self):
 		lootsafe = LootSafe(self.apiUrl, self.apiKey)
@@ -30,7 +28,7 @@ class TestLootSafeGlobes(unittest.TestCase):
 
 	def test_newItem(self):
 		lootsafe = LootSafe(self.apiUrl, self.apiKey)
-		result = lootsafe.globe.newItem(self.apiKey, self.otpkey, "FNX45", "fnx45", 120000, "metadata")
+		result = lootsafe.globe.newItem(self.apiKey, self.otpKey, "FNX45", "fnx45", 120000, "metadata")
 
 		self.assertEqual(result['status'], 200)
 

@@ -8,7 +8,7 @@ class Events(object):
 
 	# Events Urls
 
-	__url_fetchevents= "/events"
+	__url_fetchevents= "events"
 
 	# Init
 
