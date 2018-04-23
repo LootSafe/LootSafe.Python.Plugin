@@ -57,10 +57,10 @@ Output
 | crafter.newDestructionRecipe(self, apiKey, otp, result, materials, counts) | **POST**  | OPEN   | Available |
 | **Events**  |   |   |   |
 | events.fetchEvents()  | **GET**  | OPEN   | Available |
-| **Globals**  |   |   |   |
-| globe.getMeta()  | **GET**  | OPEN   | Available |
-| globe.getTokenAddress()  | **GET**  | OPEN   | Available |
-| globe.newItem(apiKey, otp, name, id, totalSupply, metadata) | **POST**  | AUTH   | Available |
+| **General**  |   |   |   |
+| general.meta()  | **GET**  | OPEN   | Available |
+| general.getTokenAddress()  | **GET**  | OPEN   | Available |
+| general.newItem(apiKey, otp, name, id, totalSupply, metadata) | **POST**  | AUTH   | Available |
 | **Items**  |   |   |   |
 | items.getItems()  | **GET**  | OPEN   | Available |
 | items.getItemAddresses()  | **GET**  | OPEN   | Available |

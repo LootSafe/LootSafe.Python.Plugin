@@ -1,7 +1,7 @@
 import requests
 import json
 
-class Globals(object):
+class General(object):
 
 	apiKey = ""
 	apiUrl = ""
@@ -20,7 +20,7 @@ class Globals(object):
 
 	# Globals
 
-	def getMeta(self):		
+	def meta(self):		
 		url = self.apiUrl + self.__url_meta
 		response = requests.get(url)
 		if response.status_code == 200:
