@@ -8,7 +8,7 @@ class Items(object):
 
 	# Items Urls
 
-	__url_getItemsItems = "item/list/"
+	__url_getItems = "item/list/"
 	__url_getItem = "item/get/"
 	__url_getItemByAddress = "item/get/address/"
 	__url_getItemAddresses = "item/addresses/get"
@@ -25,7 +25,7 @@ class Items(object):
 	# Items
 
 	def getItems(self):
-		url = self.apiUrl + self.__url_getItemsItems
+		url = self.apiUrl + self.__url_getItems
 		response = requests.get(url)
 		if response.status_code == 200:
 			return response.json()
